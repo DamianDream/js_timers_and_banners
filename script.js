@@ -228,8 +228,10 @@ function showPopupOrder() {
 
 function getSaleTimeRemaining(date) {
 
+    [YYYY, MM, DD] = date.split('-');
+
     let now = new Date();
-    let then = new Date(date);
+    let then = new Date(YYYY, --MM, DD);
 
     const t = then.getTime() - now.getTime(),
         days = Math.floor((t / (1000 * 60 * 60 * 24))),
